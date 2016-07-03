@@ -11,7 +11,7 @@ System.register(['@angular/core', './hero.service', '@angular/router'], function
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, hero_service_1, router_1;
-    var AppComponent;
+    var DashboardComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -24,24 +24,32 @@ System.register(['@angular/core', './hero.service', '@angular/router'], function
                 router_1 = router_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.title = 'Tour of Heroes';
+            DashboardComponent = (function () {
+                function DashboardComponent(heroService, router) {
+                    this.heroService = heroService;
+                    this.router = router;
+                    this.heroes = [];
                 }
-                AppComponent = __decorate([
+                ;
+                DashboardComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
+                };
+                DashboardComponent.prototype.gotoDetail = function (hero) {
+                    this.router.navigate(['/detail', hero.id]);
+                };
+                DashboardComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: "\n    <h1>{{title}}</h1>\n    <nav>\n        <a [routerLink]=\"['/dashboard']\" routerLinkActive=\"active\">Dashboard</a>\n        <a [routerLink]=\"['/heroes']\" routerLinkActive=\"active\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n  ",
-                        styleUrls: ['app/app.component.css'],
-                        directives: [router_1.ROUTER_DIRECTIVES],
-                        providers: [hero_service_1.HeroService]
+                        selector: 'my-dashboard',
+                        templateUrl: 'app/dashboard.component.html',
+                        styleUrls: ['app/dashboard.component.css'],
                     }), 
-                    __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                    __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
+                ], DashboardComponent);
+                return DashboardComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("DashboardComponent", DashboardComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=dashboard.component.js.map

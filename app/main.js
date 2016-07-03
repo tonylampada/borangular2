@@ -1,7 +1,7 @@
-System.register(['@angular/core', '@angular/platform-browser-dynamic', './app.component'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser-dynamic', './app.component', './app.routes'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var core_1, platform_browser_dynamic_1, app_component_1;
+    var core_1, platform_browser_dynamic_1, app_component_1, app_routes_1;
     return {
         setters:[
             function (core_1_1) {
@@ -12,10 +12,13 @@ System.register(['@angular/core', '@angular/platform-browser-dynamic', './app.co
             },
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
+            },
+            function (app_routes_1_1) {
+                app_routes_1 = app_routes_1_1;
             }],
         execute: function() {
             core_1.enableProdMode();
-            platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent);
+            platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [app_routes_1.APP_ROUTER_PROVIDERS]);
         }
     }
 });
