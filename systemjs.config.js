@@ -11,6 +11,7 @@
     // 'rxjs':                       'node_modules/rxjs'
 
     '@angular': 'https://npmcdn.com/@angular',
+    'angular2-in-memory-web-api': 'https://npmcdn.com/angular2-in-memory-web-api@0.0.14',
     'rxjs': 'https://npmcdn.com/rxjs@5.0.0-beta.6'
 
   };

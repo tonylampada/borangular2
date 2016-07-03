@@ -31,14 +31,41 @@ System.register(['@angular/core', './hero-detail.component', './hero.service', '
                 function HeroesComponent(heroService, router) {
                     this.heroService = heroService;
                     this.router = router;
+                    this.addingHero = false;
                 }
                 ;
                 HeroesComponent.prototype.onSelect = function (hero) {
                     this.selectedHero = hero;
+                    this.addingHero = false;
                 };
                 HeroesComponent.prototype.getHeroes = function () {
                     var _this = this;
-                    this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+                    this.heroService.getHeroes()
+                        .then(function (heroes) { return _this.heroes = heroes; })
+                        .catch(function (error) { return _this.error = error; });
+                };
+                HeroesComponent.prototype.addHero = function () {
+                    this.addingHero = true;
+                    this.selectedHero = null;
+                };
+                HeroesComponent.prototype.close = function (savedHero) {
+                    this.addingHero = false;
+                    if (savedHero) {
+                        this.getHeroes();
+                    }
+                };
+                HeroesComponent.prototype.deleteHero = function (hero, event) {
+                    var _this = this;
+                    event.stopPropagation();
+                    this.heroService
+                        .delete(hero)
+                        .then(function (res) {
+                        _this.heroes = _this.heroes.filter(function (h) { return h !== hero; });
+                        if (_this.selectedHero === hero) {
+                            _this.selectedHero = null;
+                        }
+                    })
+                        .catch(function (error) { return _this.error = error; });
                 };
                 HeroesComponent.prototype.ngOnInit = function () {
                     this.getHeroes();
