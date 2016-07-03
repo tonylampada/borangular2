@@ -32,7 +32,7 @@ System.register(['@angular/router', './heroes.component', './dashboard.component
                     component: hero_detail_component_1.HeroDetailComponent
                 },
                 {
-                    path: '',
+                    path: '**',
                     redirectTo: '/dashboard',
                     pathMatch: 'full'
                 },

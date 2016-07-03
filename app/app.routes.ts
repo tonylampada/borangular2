@@ -17,7 +17,7 @@ const routes: RouterConfig = [
         component: HeroDetailComponent
     },    
     {
-        path: '',
+        path: '**',
         redirectTo: '/dashboard',
         pathMatch: 'full'
     },
