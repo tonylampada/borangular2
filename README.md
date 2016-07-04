@@ -42,13 +42,14 @@ Rapaz, um monte de coisa. Vou fazer uma lista delas abaixo.
 * No Angular2 existem **classes injetáveis**, que fazem mais ou menos o papel dos **serviços** que a gente cria no Angular1.x (usando o método .factory() ou .service())
 * O ciclo de vida das instâncias dessas classes injetáveis **depende da estrutura da árvore onde se encaixam os componentes aonde essas instâncias são injetadas**. Isso é *completamente diferente* (e mais complicado) do que acontece com os serviços do Angular 1.x, onde tudo é singleton.
 * O CSS dos componentes, por padrão fica junto do código do componente, que nem eu faço no [djangular3](https://github.com/tonylampada/djangular3) ;-)
-* in-memory-data-service (TODO)
+* O Angular2 vem com o **in-memory-web-api** que é um jeito mais "nativo" de fazer um implementação mockada do seu backend, muito parecido com o mock-api que aparece no [djangular3](https://github.com/tonylampada/djangular3)
 
 # 4. O que falta aprender.
 
 * Qual o melhor jeito de empacotar uma aplicação Angular2 pra produção (budle, minify, tals)
 * Qual o melhor jeito de colocar o sass dentro da build do projeto.
-* Typescript. É outra linguagem, negão. Tem que aprender. (ou então caga e vai programar com JS mesmo, )
+* Typescript. É outra linguagem, negão. Tem que aprender - ou então caga e vai programar com JS mesmo, que também pode ser uma opção
 * System.js. No tutorial ele recomenda usar esse cara que é um "carregador de arquivos js" pra sua página. Meu entendimento de como usar e como ele funciona ainda tá muito meia boca.
+* Entender melhor como usar o "in-memory-web-api" pra fazer mocks de chamadas http
 * Testes - qual o melhor caminho pra fazer testes unitários
 
