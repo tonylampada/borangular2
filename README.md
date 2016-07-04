@@ -52,4 +52,4 @@ Rapaz, um monte de coisa. Vou fazer uma lista delas abaixo.
 * System.js. No tutorial ele recomenda usar esse cara que é um "carregador de arquivos js" pra sua página. Meu entendimento de como usar e como ele funciona ainda tá muito meia boca.
 * Entender melhor como usar o "in-memory-web-api" pra fazer mocks de chamadas http
 * Testes - qual o melhor caminho pra fazer testes unitários
-
+* Migração do Angular 1.x - parece muito dolorido. Existe alguma luz no fim do túnel?
